@@ -1,24 +1,36 @@
-<script setup>
-import HelloWorld from './components/HelloWorld.vue'
-</script>
-
 <template>
-  <h1 class="text-3xl font-bold underline">
-    Hello world!
-  </h1>
+    <div class="flex min-h-screen ">
+        <Sidebar :isSidebarOpen="isSidebarOpen" @toggleSidebar="toggleSidebar" />
+        <div class="flex flex-col flex-1 bg-form">
+            <Navbar @toggleSidebar="toggleSidebar" />
+            <DashboardPage />
+            <Footer />
+        </div>
+    </div>
 </template>
 
-<style scoped>
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.vue:hover {
-  filter: drop-shadow(0 0 2em #42b883aa);
-}
-</style>
+<script>
+import Navbar from './components/Navbar.vue';
+import Sidebar from './components/Sidebar.vue';
+import Footer from './components/Footer.vue';
+import DashboardPage from './pages/DashboardPage.vue';
+
+export default {
+  components: {
+    Navbar,
+    Sidebar,
+    DashboardPage,
+    Footer,
+  },
+  data() {
+    return {
+      isSidebarOpen: false
+    };
+  },
+  methods: {
+    toggleSidebar() {
+      this.isSidebarOpen = !this.isSidebarOpen;
+    }
+  }
+};
+</script>
