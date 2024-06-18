@@ -1,18 +1,19 @@
 <template>
-    <div :class="['fixed sm:overflow-x-hidden  inset-y-0 left-0 transform transition-transform duration-300 ease-in-out', { '-translate-x-full': !isSidebarOpen, 'translate-x-0': isSidebarOpen }]" class="bg-white text-black w-64">
+    <div :class="['fixed sm:overflow-x-hidden z-10 inset-y-0 left-0 transform transition-transform duration-300 ease-in-out shadow-md rounded-r', { '-translate-x-full': !isSidebarOpen, 'translate-x-0': isSidebarOpen }]" class="bg-white text-black w-64">
         <!-- Button for close sidebar -->
-        <div class="flex w-full justify-end p-4 items-center">
+        <div class="flex w-full justify-end p-2 items-center fixed">
             <button @click="$emit('toggleSidebar')" class="text-primary-light hover:bg-primary-light-hover hover:text-primary-light-hover px-3 py-2 rounded-md text-sm font-medium ">
                 <BackIcon />
             </button>
         </div>
 
         <!-- Logo App -->
-        <div class="pb-4 flex justify-center">
+        <div class="pb-4 mt-16 flex justify-center">
             <LogoIcon />
         </div>
 
-        <h2 class="text-center font-medium">Olá, Conceito!</h2>
+        <!-- Welcome -->
+        <h2 class="text-center text-gray-700">Welcome, Conceito!</h2>
 
         <!-- Options -->
         <nav class="my-4 text-gray-700 font-light">
