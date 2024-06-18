@@ -2,6 +2,7 @@
     <BoxSingleValue :total="total" :label="label"/>
     <div class="flex text-center justify-center py-4">
         TODO: Chart
+        {{ chartData }}
     </div>
 </template>
 

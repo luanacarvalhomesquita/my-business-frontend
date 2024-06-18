@@ -6,14 +6,24 @@
             <div class="container py-12 ">
                 <div class="flex gap-4">
                     <div class="shadow-md shadow-primary-gray-50 rounded w-full bg-white p-4">
-                        <BoxMultValues :item1="{value: 2035.10, label: 'Entrada'}" :item2="{value: 849.10, label: 'Saída'}" />
+                        <BoxMultValues
+                            :item1="{value: registers.input_total, label: 'Entrada'}"
+                            :item2="{value: registers.output_total, label: 'Saída'}"
+                        />
                     </div>
                     <div class="shadow-md shadow-primary-gray-50 rounded w-full bg-white p-4">
-                        <BoxMultValues :item1="{value: 1025.10, label: 'Lucro'}" :item2="{value: 845.10, label: 'Investimento'}" />
+                        <BoxMultValues
+                            :item1="{value: registers.profit_total, label: 'Lucro'}"
+                            :item2="{value: registers.investment_total, label: 'Investimento'}"
+                        />
                     </div>
                 </div>
                 <div class="shadow-md shadow-primary-gray-50 rounded w-full bg-white p-4 mt-4">
-                    <BarChart :total="1000.00" label="Comissões" :data="{}"/>
+                    <BarChart
+                        :total="registers.commission_total"
+                        label="Comissões"
+                        :chartData="registers.commission_by_worker"
+                    />
                 </div>
             </div>
         </div>
@@ -25,4 +35,14 @@
 
 import BoxMultValues from '../components/BoxMultValues.vue';
 import BarChart from '../components/BarChart.vue';
+
+import { onMounted, ref } from "vue"
+import { getAllRegisters } from "../http/dashboard-api"
+
+const registers = ref([])
+
+onMounted(async () => {
+    const { data } = await getAllRegisters()
+    registers.value = data
+})
 </script>
