@@ -6,10 +6,10 @@
             <div class="container py-12 ">
                 <div class="flex gap-4">
                     <div class="shadow-md shadow-primary-gray-50 rounded w-full bg-white p-4">
-                        <BoxValue :item1="{value: 2035.10, label: 'Entrada'}" :item2="{value: 849.10, label: 'Saída'}" />
+                        <BoxMultValues :item1="{value: 2035.10, label: 'Entrada'}" :item2="{value: 849.10, label: 'Saída'}" />
                     </div>
                     <div class="shadow-md shadow-primary-gray-50 rounded w-full bg-white p-4">
-                        <BoxValue :item1="{value: 1025.10, label: 'Lucro'}" :item2="{value: 845.10, label: 'Investimento'}" />
+                        <BoxMultValues :item1="{value: 1025.10, label: 'Lucro'}" :item2="{value: 845.10, label: 'Investimento'}" />
                     </div>
                 </div>
                 <div class="shadow-md shadow-primary-gray-50 rounded w-full bg-white p-4 mt-4">
@@ -23,6 +23,6 @@
 
 <script setup>
 
-import BoxValue from '../components/BoxValue.vue';
+import BoxMultValues from '../components/BoxMultValues.vue';
 import BarChart from '../components/BarChart.vue';
 </script>
