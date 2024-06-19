@@ -22,7 +22,7 @@
                     <BarChart
                         :total="registers.commission_total"
                         label="Comissões"
-                        :chartData="registers.commission_by_worker"
+                        :data="registers.commission_by_worker"
                     />
                 </div>
             </div>
@@ -33,8 +33,8 @@
 
 <script setup>
 
-import BoxMultValues from '../components/BoxMultValues.vue';
-import BarChart from '../components/BarChart.vue';
+import BoxMultValues from '../components/Dashboard/BoxMultValues.vue';
+import BarChart from '../components/Dashboard/BarChart.vue';
 
 import { onMounted, ref } from "vue"
 import { getAllRegisters } from "../http/dashboard-api"

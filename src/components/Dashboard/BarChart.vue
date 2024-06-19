@@ -1,15 +1,12 @@
 <template>
     <BoxSingleValue :total="total" :label="label"/>
-    <div class="flex text-center justify-center py-4">
-        TODO: Chart
-        {{ chartData }}
-    </div>
+    TODO
 </template>
 
 <script setup>
 import BoxSingleValue from './BoxSingleValue.vue';
 
-defineProps({
+const props = defineProps({
     total: {
         type: Number,
         default: 0
@@ -18,9 +15,9 @@ defineProps({
         type: String,
         default: ''
     },
-    chartData: {
-        type: Object,
-        default: () => {}
+    data: {
+        type: Array,
+        default: () => []
     }
 })
 
