@@ -3,7 +3,7 @@
         <Sidebar :isSidebarOpen="isSidebarOpen" @toggleSidebar="toggleSidebar" />
         <div class="flex flex-col flex-1 bg-form">
             <Navbar @toggleSidebar="toggleSidebar" />
-            <DashboardPage />
+            <router-view />
             <Footer />
         </div>
     </div>
@@ -13,13 +13,11 @@
 import Navbar from './components/Navbar.vue';
 import Sidebar from './components/Sidebar.vue';
 import Footer from './components/Footer.vue';
-import DashboardPage from './pages/DashboardPage.vue';
 
 export default {
   components: {
     Navbar,
     Sidebar,
-    DashboardPage,
     Footer,
   },
   data() {
